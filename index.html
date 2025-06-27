@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number System- Divisibility Rule 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="test-container">
+    <div class="introduction-screen">
+      <h2>Mathematics</h2>
+      <p><strong>Subject:</strong> Number System- Divisibility Rule 1</p>
+      <p><strong>Total Question:</strong> 25টি</p>
+      <p><strong>Total Marks:</strong> 25</p>
+      <p><strong>Time:</strong> 20 মিনিট</p>
+      <p><strong>Negative marking:</strong> প্রতিটি ভুল উত্তরের জন্য 0.33 নম্বর কাটা হবে।</p>
+      <button id="start-test-button" class="start-test-button">start-test-button</button>
+    </div>
+
+    <div class="test-content" style="display: none;">
+        <div class="header">
+          <div class="section-title">Number System- Divisibility Rule 1</div>
+          <div class="main-timers-container">
+            <div class="total-timer">Time Left: <span id="time">00:00</span></div>
+          </div>
+        </div>
+
+        <div class="question-navigation">
+          <div class="question-timer-per-question">Time on Question: <span id="per-question-time">00:00</span></div>
+        </div>
+
+        <div class="question-display">
+          <p id="question-text"></p>
+          <div class="options-container" id="options-container">
+            </div>
+          <div class="explanation-area" style="display: none;">
+            <h3>Explanation:</h3>
+            <p id="explanation-text"></p>
+          </div>
+        </div>
+
+        <div class="navigation-area">
+            <button class="next-button" id="next-button">Next</button> <div class="navigation-left-group">
+                <button class="prev-button" id="prev-button">Previous</button>
+                <button class="clear-response-button" id="clear-response-button">Clear Response</button>
+                <button class="mark-for-review-button" id="mark-for-review-button">Mark for Review</button>
+            </div>
+            <div class="navigation-right-group">
+                <button class="submit-button" id="submit-button">Final Submit</button>
+            </div>
+        </div>
+
+        <div class="review-area">
+          <h3>Section</h3>
+          <div class="question-grid"></div>
+        </div>
+    </div> 
+    
+    <div class="result-area" style="display: none;">
+      <h2>Result</h2>
+      <div class="score">Score: <span id="score">0</span></div>
+      <div class="correct-answers">Correct Answer: <span id="correct-count">0</span></div>
+      <div class="wrong-answers">Wrong Answer: <span id="wrong-count">0</span></div>
+      <div class="unattempted-questions">Unattempted: <span id="unattempted-count">0</span></div>
+      <div class="total-questions">Total Questions: <span id="total-questions-result">0</span></div>
+
+      <div class="pass-mark-section">
+        <p><strong>Pass Mark:</strong> <span id="pass-mark"></span></p>
+        <p><strong>Your Percentage:</strong> <span id="percentage">0%</span></p>
+      </div>
+
+      <div class="percentage-graph-container">
+        <div class="percentage-bar" id="percentage-bar"></div>
+      </div>
+      <div class="filter-buttons">
+        <button id="show-all" class="filter-button active">show-all</button>
+        <button id="show-correct" class="filter-button">show-Correct</button>
+        <button id="show-wrong" class="filter-button">show-wrong</button>
+        <button id="show-unattempted" class="filter-button">show-Unattempted</button>
+      </div>
+      <div class="review-questions-container">
+        </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
