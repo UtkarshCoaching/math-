@@ -143,7 +143,15 @@ body {
     margin-bottom: 20px;
 }
 
-.question-display p {
+/* নতুন যোগ করা হয়েছে: প্রশ্ন নম্বরের স্টাইল */
+#question-number {
+    font-size: 1.5em; /* প্রশ্ন নম্বরের ফন্ট সাইজ */
+    font-weight: bold;
+    color: #007bff; /* নীল রঙ */
+    margin-bottom: 10px; /* প্রশ্নের লেখার থেকে একটু নিচে মার্জিন */
+}
+
+.question-display p#question-text { /* এটি মূল প্রশ্ন লেখার জন্য */
     font-size: 1.2em;
     margin-bottom: 15px;
     line-height: 1.6;
