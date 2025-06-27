@@ -160,6 +160,7 @@ let perQuestionTimers = []; // Stores time spent on each question
 const startTestButton = document.getElementById('start-test-button');
 const introductionScreen = document.querySelector('.introduction-screen');
 const testContent = document.querySelector('.test-content');
+const questionNumberDisplay = document.getElementById('question-number'); // নতুন যোগ করা হয়েছে
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const prevButton = document.getElementById('prev-button');
@@ -241,7 +242,11 @@ function loadQuestion() {
     savePerQuestionTime(); // Save time for the current question before loading a new one
 
     const question = questions[currentQuestionIndex];
-    questionText.textContent = `${currentQuestionIndex + 1}. ${question.question}`;
+    // প্রশ্ন নম্বারটি এখানে আলাদাভাবে সেট করুন
+    questionNumberDisplay.textContent = `${currentQuestionIndex + 1}.`; // শুধু নম্বর এবং ডট
+    // প্রশ্ন লেখা আলাদাভাবে সেট করুন
+    questionText.textContent = question.question; // শুধু প্রশ্ন লেখা
+
     optionsContainer.innerHTML = '';
     explanationArea.style.display = 'none'; // Hide explanation when loading a new question
 
@@ -450,7 +455,7 @@ function displayReviewQuestions(filterType = 'all') {
             }
 
             reviewItem.innerHTML = `
-                <h4>Question ${index + 1}: ${question.question} <span class="${statusClass}">${statusText}</span></h4>
+                <h4>প্রশ্ন ${index + 1}: ${question.question} <span class="${statusClass}">${statusText}</span></h4>
                 <div class="options-review">
                     ${question.options.map((option, optIndex) => {
                         let optionClass = '';
@@ -464,7 +469,7 @@ function displayReviewQuestions(filterType = 'all') {
                     }).join('')}
                 </div>
                 <div class="explanation">
-                    <h3>Explanation:</h3>
+                    <h3>ব্যাখ্যা:</h3>
                     <p>${question.explanation}</p>
                 </div>
             `;
@@ -480,7 +485,7 @@ function submitTest(timeUp = false) {
     savePerQuestionTime(); // Save the time for the last question
 
     // Confirmation dialog
-    const confirmSubmit = confirm(timeUp ? "Time's up! Your test will be submitted." : "Are you sure you want to submit the test?");
+    const confirmSubmit = confirm(timeUp ? "সময় শেষ! আপনার পরীক্ষা জমা দেওয়া হবে।" : "আপনি কি নিশ্চিত পরীক্ষা জমা দিতে চান?");
 
     if (confirmSubmit) {
         calculateResult();
